@@ -1,0 +1,81 @@
+import { StyleSheet } from 'react-native';
+
+const styles = StyleSheet.create({
+    mainContainer:{
+        flex:1,
+        justifyContent:'space-between',
+        marginTop:30
+    },
+    contactsContainer:{
+        flexDirection:'row',
+        justifyContent:'space-between',
+        alignItems:'center',
+        marginHorizontal:20,
+        marginVertical:10
+    },
+    crGroup:{
+        display:'flex',
+        flexDirection:'row',
+        width:126,
+        justifyContent:'space-evenly',
+        alignItems:'center',
+        borderWidth:1,
+        borderRadius:20,
+        borderColor:'rgba(34, 66, 216, 0.5)',
+        backgroundColor:'#EAEDFB'
+    },
+    contactTxt:{
+        fontSize:30,
+        fontWeight:'bold',
+        color:'#2242D8',
+    },
+    crTxt:{
+        fontSize:12,
+        color:'#2242D8',
+        fontWeight:'500',
+    },
+    circle:{
+        width:22,
+        height:22,
+        position:'absolute',
+        left:20
+    },
+    searchContainer:{
+        width:'80%',
+        height:50,
+        backgroundColor:'#EAEDFB',
+        borderRadius:20,
+        flexDirection:'row',
+        alignItems:'center',
+        justifyContent:'center'
+    },
+    connectionCont:{
+        width:50,
+        height:50,
+        backgroundColor:'#EAEDFB',
+        alignItems:'center',
+        justifyContent:'center',
+        borderRadius:20
+    },
+    searchMainCont:{
+        flexDirection:'row',
+        justifyContent:'space-between',
+        marginHorizontal:18,
+        marginVertical:10
+    },
+    subContainer:{
+        flexDirection:'row',
+        alignItems:'center',
+        justifyContent:'space-around',
+        width:'90%',
+        height:110,
+        backgroundColor:'#EAEDFB',
+        borderRadius:20,
+        borderWidth:1,
+        borderColor:'rgba(34, 66, 216, 0.26)',
+        alignSelf:'center',
+        marginVertical:5
+    },
+});
+
+export default styles;
