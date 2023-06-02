@@ -13,6 +13,10 @@ import LogIn from './LogIn/LogIn';
 import Contacts from './Contacts/Contacts';
 import Scanned from './ScannedPage/Scanned';
 import Cards from './Cards/Cards';
+import CardHomeScreen from './CardManipulate/CardHomeScreen';
+import EditCard from './CardManipulate/EditCard/EditCard';
+import {useSafeAreaInsets} from 'react-native-safe-area-context';
+
 const Tab = createBottomTabNavigator();
 const Stack = createNativeStackNavigator()
 
@@ -25,6 +29,7 @@ const CamerPage = () => {
 }
 
 const ProfileSetting = () => {
+    const insets = useSafeAreaInsets()
   return (
         <Tab.Navigator screenOptions={({route}) => ({
             tabBarIcon: ({focused, size, color }) => {
@@ -46,9 +51,9 @@ const ProfileSetting = () => {
                 }
                 
                 return <FontAwesome5 name={iconName} size={size} color={color} />
-            }
+            },
         })}>
-            <Tab.Screen name='Cards' component={Cards} options={{header:() => null}}/>
+            <Tab.Screen name='Cards' component={true ? CardHomeScreen : Cards } options={{header:() => null}}/>
             <Tab.Screen name='Scan Cards' component={ScanCard} options={{headerTintColor: '#2242D8', headerTitleStyle: { fontSize:30, fontWeight:'bold'} }} />
             <Tab.Screen name='Add Cards' component={About} options={{header:() => null}}/>
             <Tab.Screen name='Contacts' component={Contacts} options={{header: () => null}} />
@@ -61,6 +66,7 @@ const ScreenNavigation = () =>{
         <NavigationContainer>
             <Stack.Navigator>
                 <Stack.Screen name='profile' component={ProfileSetting} options={{header:() => null}} />
+                <Stack.Screen name='Edit Card' component={EditCard} options={{header:() => null}}/>
                 <Stack.Screen name='welcome' component={WelCome} options={{header: () => null}} />
                 <Stack.Screen name='signup' component={SignUp} options={{title: null, headerTintColor:'#2242D8'}}/>
                 <Stack.Screen name='login' component={LogIn} options={{title: null, headerTintColor:'#2242D8'}}/>
